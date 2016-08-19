@@ -1,6 +1,18 @@
 %{
 #include "hpp.hpp"
+string LexString;
 %}
 %option noyywrap yylineno
+%x lexstring
 %%
+\"[^\"]*\"			{}				/* comment */
+
+'					{BEGIN(lexstring); LexString="";}
+<lexstring>'		{BEGIN(INITIAL); yylval.o = new Str(LexString); return SYM;}
+<lexstring>.		{LexString+=yytext[0];}
+
+[a-zA-Z0-9_]+		TOC(Sym,SYM)	/* symbol */
+[#+\-*/^:?.]		TOC(Sym,SYM)	/* operators */
+[ \t\r\n]+			{}				/* drop spaces */
+.					{}				/* drop undetected chars */
 %%
