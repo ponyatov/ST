@@ -1,5 +1,4 @@
-#  ![logo](doc/logo.png) `Budd`
-## Smalltalk-like guest OS
+#  ![logo](doc/logo.png) Smalltalk-like guest OS
 
 (c) Dmitry Ponyatov <<dponyatov@gmail.com>> 2020 All rights reserved
 
