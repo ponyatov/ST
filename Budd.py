@@ -12,9 +12,15 @@ class Object:
     def __init__(self, V):
         self.value = V
 
+    ## @name dump
+
+    ## `pytest` callback
     def test(self): return self.dump(test=True)
+
+    ## `print` callback
     def __repr__(self): return self.dump()
 
+    ## full text tree dump
     def dump(self, cycle=[], depth=0, prefix='', test=False):
         # head
         def pad(depth): return '\n' + '\t' * depth
@@ -22,13 +28,33 @@ class Object:
         # subtree
         return ret
 
+    ## `<T:V>` header
     def head(self, prefix='', test=False):
         gid = f' @{id(self):x}' if not test else ''
         return f'{prefix}<{self.tag()}:{self.val()}>{gid}'
 
+    ## type/class tag
     def tag(self): return self.__class__.__name__.lower()
+
+    ## value represented for dumps
     def val(self): return f'{self.value}'
 
+
+## scalar data close to machine primitives
+class Primitive(Object): pass
+
+## nothing
+class Nil(Primitive):
+    def __init__(self): super().__init__('')
+
+## floating point
+class Num(Primitive):
+    def __init__(self, F): Primitive.__init__(self, float(F))
+
+class Int(Num):
+    def __init__(self, N): Primitive.__init__(self, int(N))
+
+class Str(Primitive): pass
 
 ## system init
 if __name__ == '__main__':

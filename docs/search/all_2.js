@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['classical_20smalltalk_20drawbacks',['Classical Smalltalk drawbacks',['../md_doc_drawbacks.html',1,'']]]
+  ['budd',['Budd',['../group__Budd.html',1,'']]],
+  ['budd_2epy',['Budd.py',['../Budd_8py.html',1,'']]]
 ];

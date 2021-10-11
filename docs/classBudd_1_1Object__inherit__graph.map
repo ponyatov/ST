@@ -1,0 +1,7 @@
+<map id="Budd.Object" name="Budd.Object">
+<area shape="rect" id="node2" href="$classBudd_1_1Primitive.html" title="scalar data close to machine primitives " alt="" coords="91,80,197,107"/>
+<area shape="rect" id="node3" href="$classBudd_1_1Nil.html" title="nothing " alt="" coords="5,155,77,181"/>
+<area shape="rect" id="node4" href="$classBudd_1_1Num.html" title="floating point " alt="" coords="102,155,186,181"/>
+<area shape="rect" id="node6" href="$classBudd_1_1Str.html" title="Budd.Str" alt="" coords="210,155,283,181"/>
+<area shape="rect" id="node5" href="$classBudd_1_1Int.html" title="Budd.Int" alt="" coords="109,229,179,256"/>
+</map>
