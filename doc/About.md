@@ -1,7 +1,9 @@
 # About
 #ST
 
-This is a [[Budd/Smalltalk|Smalltalk]]-ish system based on a portable bytecode interpreter that acts like a GuestOS over any generic system (mainstream OS, or can be embedded into any large software system by your selection).
+https://ponyatov.github.io/ST/
+
+This is a [[ST/Smalltalk|Smalltalk]]-ish system based on a portable bytecode interpreter that acts like a GuestOS over any generic system (mainstream OS, or can be embedded into any large software system by your selection).
 
 ## #Smalltalk is for:
 
@@ -14,7 +16,7 @@ This is a [[Budd/Smalltalk|Smalltalk]]-ish system based on a portable bytecode i
 
 Original Smalltalk has some notable [[drawbacks]] so its design and syntax should be rethought with modern habits, tendencies, and the feel of programming culture.
 
-## [[Budd/Implementation|Implementation]]
+## [[ST/Implementation|Implementation]]
 
 This Smalltalk-ish language variant is far from its original design.
 

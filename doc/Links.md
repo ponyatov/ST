@@ -27,3 +27,14 @@
 [mozer]
 	Heinrich Moser
 	[**Smalltalk: Overview and Implementation Issues**](https://www.heinzi.at/texte/smalltalk.pdf)
+
+[minsky]
+	Marvin Minsky
+	[FRAMES: A Framework for Representing Knowledge](https://web.media.mit.edu/~minsky/papers/Frames/frames.html)
+	MIT-AI Laboratory Memo 306, June, 1974.
+
+[dragon]
+	Alfred V. Aho, Monica S. Lam, Ravi Sethi, and Jeffrey D. Ullman
+	**Compilers: Principles, Techniques, and Tools** 2ed
+	Pearson Education, Inc Publication date	1986, 2006
+	ISBN 0-201-10088-6

@@ -1,4 +1,8 @@
 # #Smalltalk  in #Python
 #ST #Python
 
-## Core [[Budd/Object|Object]]
+## Core [[ST/Object|Object]]
+## [[ST/Primitive|Primitive]]s
+## [[Container]]s
+## [[Object graph]]
+### [[homoiconicity]]

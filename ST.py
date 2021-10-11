@@ -10,7 +10,12 @@ import os, sys
 ## core object
 class Object:
     def __init__(self, V):
+        ## scalar: object name, string/number value,..
         self.value = V
+        ## associative array: map = env/namespace
+        self.slot = {}
+        ## ordered container: vector = stack = queue = AST
+        self.nest = []
 
     ## @name dump
 
@@ -60,22 +65,13 @@ class Str(Primitive): pass
 ## generic data container
 class Container(Object):
     ## @param V unnamed by default
-    def __init__(self, V=''):
-        super().__init__(V)
+    def __init__(self, V=''): super().__init__(V)
 
 ## associative array (dict, vocabulary)
-class Map(Container):
-    def __init__(self, V=''):
-        super().__init__(V)
-        ## attribute slot{}s
-        self.slot = {}
+class Map(Container): pass
 
 ## ordered container
-class Vector(Container):
-    def __init__(self, V=''):
-        super().__init__(V)
-        ## nest[]ed data
-        self.nest = []
+class Vector(Container): pass
 
 ## LIFO stack
 class Stack(Vector): pass
