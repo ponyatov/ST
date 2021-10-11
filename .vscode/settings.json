@@ -5,7 +5,7 @@
             "sequence": [
                 "workbench.action.files.saveAll",
                 {"command": "workbench.action.terminal.sendSequence",
-                    "args": {"text": "\u000D clear ; make meta \u000D"}}
+                    "args": {"text": "\u000D clear ; make rs \u000D"}}
             ]
         },
         {
@@ -13,17 +13,19 @@
             "sequence": [
                 "workbench.action.files.saveAll",
                 {"command": "workbench.action.terminal.sendSequence",
-                    "args": {"text": "\u000D clear ; make all \u000D"}}
+                    "args": {"text": "\u000D clear ; make py \u000D"}}
             ]
         },
     ],
 
     // \ files
     "files.exclude": {
-        "**/Budd/**":true, "**/docs/**":true,
+        "**/ST/**":true, "**/docs/**":true,
         "**/__pycache__/**":true,
+        "**/target/**":true, "**/Cargo.lock":true,
     },
     "files.watcherExclude": {
+        "**/target/**":true, "**/Cargo.lock":true,
     },
     "files.associations": {
     },

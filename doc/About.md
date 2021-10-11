@@ -1,5 +1,5 @@
 # About
-#ST #Budd
+#ST
 
 This is a [[Budd/Smalltalk|Smalltalk]]-ish system based on a portable bytecode interpreter that acts like a GuestOS over any generic system (mainstream OS, or can be embedded into any large software system by your selection).
 

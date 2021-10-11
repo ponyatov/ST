@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['primitive',['Primitive',['../classBudd_1_1Primitive.html',1,'Budd']]]
+  ['nil',['Nil',['../classST_1_1Nil.html',1,'ST']]],
+  ['num',['Num',['../classST_1_1Num.html',1,'ST']]]
 ];

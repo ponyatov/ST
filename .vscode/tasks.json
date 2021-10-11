@@ -31,5 +31,17 @@
             "command":        "make meta",
             "problemMatcher": []
         },
+        {
+            "label":          "cargo: update",
+            "type":           "shell",
+            "command":        "cargo update",
+            "problemMatcher": []
+        },
+        {
+            "label":          "cargo: watch",
+            "type":           "shell",
+            "command":        "make watch",
+            "problemMatcher": []
+        },
     ]
 }

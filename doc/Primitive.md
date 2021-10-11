@@ -1,5 +1,5 @@
-# [[Budd/Primitive|Primitive]] types
-#ST #Budd #Py
+# `Primitive` types
+#ST #Python
 
 Some types can be represented at a machine level as integer and float numbers. While it is mostly a single number that encodes some scalar data element, **in Smalltalk anything is an object**, so primitives also can have some arbitrary properties such as measurement units or tolerance.
 

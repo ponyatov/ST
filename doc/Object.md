@@ -1,5 +1,5 @@
 # Core [[Budd/Object|Object]]
-#ST #Budd #Py
+#ST #Python 
 
 In the simplest case, we only wrap any Python type into the base `Object` class:
 
@@ -41,7 +41,7 @@ Also, we need to display any object in a human-readable form. For tests, we need
     def val(self): return f'{self.value}'
 ```
 
-For [[Budd/Primitive|Primitive]] types dumps can be simple: only short header which show type and value for the selected object in the `<tag:value>` printable form. Any dump starts from the new line to make multiple sequential dumps more readable.
+For [[ST/Primitive|Primitive]] types dumps can be simple: only short header which show type and value for the selected object in the `<tag:value>` printable form. Any dump starts from the new line to make multiple sequential dumps more readable.
 
 ```py
 def test_nil():
@@ -50,4 +50,6 @@ def test_integer():
     assert Int(12.34).test() == '\n<int:12>'
 ```
 
-The more complex objects will include extra elements which will interest us in debugging. Any nested object can in turn be complex, or reference objects in a higher level of nesting (references can form directed cycles).
+The more complex objects will include extra elements which will interest us in debugging. Any nested object can in turn be complex, or reference objects in a higher level of nesting (references can form directed cycles). Of cause, nested dumps are mostly important for [[Container]] data types such as lists, maps, and any other **oriented object graph**s which are *the core concept for program and data representation in our system*.
+
+## next: [[Object graph]]

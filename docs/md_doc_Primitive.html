@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Budd: [[Budd/Primitive|Primitive]] types</title>
+<title>ST: `Primitive` types</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Budd
+   <div id="projectname">ST
    </div>
    <div id="projectbrief">Smalltalk-like guest OS</div>
   </td>
@@ -61,10 +61,10 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">[[Budd/Primitive|Primitive]] types </div>  </div>
+<div class="title">`Primitive` types </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>#ST #Budd #Py</p>
+<div class="textblock"><p>#ST #Python</p>
 <p>Some types can be represented at a machine level as integer and float numbers. While it is mostly a single number that encodes some scalar data element, <b>in Smalltalk anything is an object</b>, so primitives also can have some arbitrary properties such as measurement units or tolerance.</p>
 <div class="fragment"><div class="line"></div><div class="line"><span class="keyword">class </span>Primitive(Object): <span class="keyword">pass</span></div></div><!-- fragment --><p>In most languages, there is some special type that represents "nothing" or an empty data container. For the first look, these two cases must be differentiated, here we touch some algebraic complexity with programming language concepts:</p><ul>
 <li>can nothing, an empty list, and a reference to a non-existing object be the same or not?</li>

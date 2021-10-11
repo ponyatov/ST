@@ -7,5 +7,7 @@
         // "ms-azuretools.vscode-docker",
         "tht13.python",
         // "ms-python.python",
+        "rust-lang.rust",
+        "bungcip.better-toml",
     ]
 }

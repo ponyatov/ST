@@ -1,5 +1,5 @@
 # Classical Smalltalk drawbacks
-#ST #Budd
+#ST
 
 ## hurdy syntax:
 
@@ -11,3 +11,4 @@
 
 Modern programming requires systems based on files due to the requirement of `git` usage at least for system snapshots and library sharings. Classical ST uses cranky images which are not suitable for real and massive use.
 
+## pure interpreter nature

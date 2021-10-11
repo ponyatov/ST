@@ -1,6 +1,6 @@
 # Implementation
 ## Simplicity over Completeness
-#ST #Budd 
+#ST
 
 This Smalltalk-ish language variant is far from its original design.
 
@@ -20,8 +20,8 @@ So an unpopular decision was taken to follow the spirit of the Smalltalk, but no
 
 ## Two host (implementation) languages were selected:
 
-- [[Budd/Python|Python]] very popular and easy to use
-- [[Budd/Rust|Rust]] perspective low-level language solves a lot of problems of the classical C/C++ (not very popular now but has a good potential)
+- [[ST/Python|Python]] very popular and easy to use
+- [[ST/Rust|Rust]] perspective low-level language solves a lot of problems of the classical C/C++ (not very popular now but has a good potential)
 
 ## Simplicity over Completeness
 

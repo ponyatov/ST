@@ -3,8 +3,11 @@
 *.log
 
 /docs/
-/Budd/
+/ST/
 
 __pycache__/
+
+target/
+Cargo.lock
 
 !.gitignore

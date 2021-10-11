@@ -1,11 +1,12 @@
 var indexSectionsWithContent =
 {
-  0: "_abcdhilnopstv",
-  1: "inops",
-  2: "b",
+  0: "_acdhilmnopqstv",
+  1: "cimnopqsv",
+  2: "s",
   3: "_dhtv",
-  4: "b",
-  5: "acils"
+  4: "ns",
+  5: "s",
+  6: "achilos"
 };
 
 var indexSectionNames =
@@ -14,8 +15,9 @@ var indexSectionNames =
   1: "classes",
   2: "files",
   3: "functions",
-  4: "groups",
-  5: "pages"
+  4: "variables",
+  5: "groups",
+  6: "pages"
 };
 
 var indexSectionLabels =
@@ -24,7 +26,8 @@ var indexSectionLabels =
   1: "Classes",
   2: "Files",
   3: "Functions",
-  4: "Modules",
-  5: "Pages"
+  4: "Variables",
+  5: "Modules",
+  6: "Pages"
 };
 

@@ -1,9 +1,9 @@
-PROJECT_NAME           = "Budd"
+PROJECT_NAME           = "ST"
 PROJECT_BRIEF          = "Smalltalk-like guest OS"
 PROJECT_LOGO           = doc/logo.png
 OUTPUT_DIRECTORY       =
 WARN_IF_UNDOCUMENTED   = NO
-INPUT                  = README.md src doc Budd.py test_Budd.py
+INPUT                  = README.md src doc ST.py test_ST.py
 RECURSIVE              = YES
 USE_MDFILE_AS_MAINPAGE = README.md
 HTML_OUTPUT            = docs

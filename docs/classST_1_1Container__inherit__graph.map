@@ -1,0 +1,7 @@
+<map id="ST.Container" name="ST.Container">
+<area shape="rect" id="node3" href="$classST_1_1Map.html" title="associative array (dict, vocabulary) " alt="" coords="5,155,73,181"/>
+<area shape="rect" id="node4" href="$classST_1_1Vector.html" title="ordered container " alt="" coords="97,155,179,181"/>
+<area shape="rect" id="node2" href="$classST_1_1Object.html" title="core object " alt="" coords="48,5,129,32"/>
+<area shape="rect" id="node5" href="$classST_1_1Queue.html" title="FIFO queue. " alt="" coords="45,229,127,256"/>
+<area shape="rect" id="node6" href="$classST_1_1Stack.html" title="LIFO stack. " alt="" coords="151,229,229,256"/>
+</map>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['links',['Links',['../md_doc_links.html',1,'']]],
-  ['links',['Links',['../md_doc_Links.html',1,'']]]
+  ['map',['Map',['../classST_1_1Map.html',1,'ST']]]
 ];

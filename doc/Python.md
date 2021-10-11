@@ -1,4 +1,4 @@
 # #Smalltalk  in #Python
-#ST #Budd #Py 
+#ST #Python
 
 ## Core [[Budd/Object|Object]]

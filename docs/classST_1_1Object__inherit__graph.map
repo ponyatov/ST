@@ -1,0 +1,12 @@
+<map id="ST.Object" name="ST.Object">
+<area shape="rect" id="node2" href="$classST_1_1Container.html" title="generic data container " alt="" coords="89,80,187,107"/>
+<area shape="rect" id="node7" href="$classST_1_1Primitive.html" title="scalar data close to machine primitives " alt="" coords="243,80,337,107"/>
+<area shape="rect" id="node3" href="$classST_1_1Map.html" title="associative array (dict, vocabulary) " alt="" coords="5,155,73,181"/>
+<area shape="rect" id="node4" href="$classST_1_1Vector.html" title="ordered container " alt="" coords="97,155,179,181"/>
+<area shape="rect" id="node5" href="$classST_1_1Queue.html" title="FIFO queue. " alt="" coords="40,229,121,256"/>
+<area shape="rect" id="node6" href="$classST_1_1Stack.html" title="LIFO stack. " alt="" coords="146,229,223,256"/>
+<area shape="rect" id="node8" href="$classST_1_1Nil.html" title="nothing " alt="" coords="203,155,262,181"/>
+<area shape="rect" id="node9" href="$classST_1_1Num.html" title="floating point " alt="" coords="287,155,357,181"/>
+<area shape="rect" id="node11" href="$classST_1_1Str.html" title="ST.Str" alt="" coords="381,155,441,181"/>
+<area shape="rect" id="node10" href="$classST_1_1Int.html" title="ST.Int" alt="" coords="293,229,351,256"/>
+</map>
