@@ -9,3 +9,4 @@
     - [[box constructor]]
     - [[operators]]
     - full text tree object graph [[dump]]
+	- [[stack]] operations

@@ -3,8 +3,10 @@ import pytest
 
 def test_any(): assert True
 
+hello = Object('Hello')
+
 def test_hello():
-    assert Object('Hello').test() == '\n<object:Hello>'
+    assert hello.test() == '\n<object:Hello>'
 
 def test_nil():
     assert Nil().test() == '\n<nil:>'
@@ -50,3 +52,21 @@ def test_box_keys():
 
 def test_box_iter():
     for i in iter(Object('')): pass
+
+world = Object('World')
+
+def test_op_append():
+    assert (hello // world).test() == \
+        '\n<object:Hello>' +\
+        '\n\t0: <object:World>'
+
+left = Object('left')
+right = Object('right')
+
+def test_op_shifts():
+    hello << left >> right
+    assert hello.test() == \
+        '\n<object:Hello>' +\
+        '\n\tobject = <object:left>' +\
+        '\n\tright = <object:right>' +\
+        '\n\t0: <object:World>'

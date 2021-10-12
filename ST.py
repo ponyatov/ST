@@ -57,19 +57,46 @@ class Object:
         gid = f' @{id(self):x}' if not test else ''
         return f'{prefix}<{self.tag()}:{self.val()}>{gid}'
 
+    ## @name operator
+
+    ## `A.keys()` get slot names in order
+    def keys(self): return sorted(self.slot.keys())
+
+    ## `iter(A)` iterate over nest[]ed
+    def __iter__(self): return iter(self.nest)
+
     ## type/class tag
     def tag(self): return self.__class__.__name__.lower()
 
     ## value represented for dumps
     def val(self): return f'{self.value}'
 
-    ## @name operator
+    ## `A // B -> A.append(B)` append to end of A
+    def __floordiv__(self, that):
+        that = Object.box(that)
+        self.nest.append(that); return self
 
-    ## get slot names in order
-    def keys(self): return sorted(self.slot.keys())
+    ## `A[key]` get slot by name, or nested element by integer index
+    def __getitem__(self, key):
+        if isinstance(key, str): return self.slot[key]
+        if isinstance(key, int): return self.nest[key]
+        assert TypeError(['__getitem__', type(key), key])
 
-    ## iterate over nest[]ed
-    def __iter__(self): return iter(self.nest)
+    ## `A[key] = B` set slot by name
+    def __setitem__(self, key, that):
+        assert isinstance(key, str)
+        that = Object.box(that)
+        self.slot[key] = that; return self
+
+    ## `A << B -> A[B.tag] = B` assign slot by B class tag
+    def __lshift__(self, that):
+        that = Object.box(that)
+        return self.__setitem__(that.tag(), that)
+
+    ## `A >> B -> A[B.val] = B` assign slot by B value
+    def __rshift__(self, that):
+        that = Object.box(that)
+        return self.__setitem__(that.val(), that)
 
 
 ## scalar data close to machine primitives
@@ -105,6 +132,15 @@ class Stack(Vector): pass
 
 ## FIFO queue
 class Queue(Vector): pass
+
+
+## hardware components
+class HW(Object): pass
+
+## Video Graphics Array
+class VGA(HW): pass
+
+vga = VGA('test')
 
 ## system init
 if __name__ == '__main__':
