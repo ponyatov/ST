@@ -1,4 +1,5 @@
 # Object graph
+## cyclic self-referencing directed hypergraph
 #ST #Py
 
 As you can note in [[Container]] classes, there is a specific pattern that also repeats almost in all data types: 
@@ -53,3 +54,7 @@ class Vector(Container): pass
 class Stack(Vector): pass
 class Queue(Vector): pass
 ```
+
+- Next, we can define some [[operators]] over object graph, but first, 
+- we'll add a custom [[box constructor]] which wraps Python types into object graph nodes. 
+- With operators the full [[ST/dump|dump]] for object graphs can be made.

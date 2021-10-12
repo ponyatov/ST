@@ -17,6 +17,15 @@ class Object:
         ## ordered container: vector = stack = queue = AST
         self.nest = []
 
+    ## Python types wrapper
+    def box(that):
+        if isinstance(that, Object): return that
+        if that is None: return Nil()
+        if isinstance(that, str): return Str(that)
+        if isinstance(that, int): return Int(that)
+        if isinstance(that, float): return Num(that)
+        raise TypeError(['box', type(that), that])
+
     ## @name dump
 
     ## `pytest` callback
@@ -30,6 +39,16 @@ class Object:
         # head
         def pad(depth): return '\n' + '\t' * depth
         ret = pad(depth) + self.head(prefix, test)
+        # cycle break
+        if not depth: cycle = [] # init
+        if self in cycle: return f'{self.value} _/'
+        else: cycle.append(self)
+        # slot{}s
+        for i in self.keys():
+            ret += self[i].dump(cycle, depth + 1, f'{i} = ', test)
+        # nest[]editor
+        for j, k in enumerate(self):
+            ret += k.dump(cycle, depth + 1, f'{j}: ', test)
         # subtree
         return ret
 
@@ -43,6 +62,14 @@ class Object:
 
     ## value represented for dumps
     def val(self): return f'{self.value}'
+
+    ## @name operator
+
+    ## get slot names in order
+    def keys(self): return sorted(self.slot.keys())
+
+    ## iterate over nest[]ed
+    def __iter__(self): return iter(self.nest)
 
 
 ## scalar data close to machine primitives

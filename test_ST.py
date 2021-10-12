@@ -29,3 +29,24 @@ def test_stack_empty():
 
 def test_queue_empty():
     assert Queue().test() == '\n<queue:>'
+
+def test_box_object():
+    assert Object.box(Object('')).test() == '\n<object:>'
+
+def test_box_nil():
+    assert Object.box(None).test() == '\n<nil:>'
+
+def test_box_str():
+    assert Object.box('abc').test() == '\n<str:abc>'
+
+def test_box_int():
+    assert Object.box(12).test() == '\n<int:12>'
+
+def test_box_num():
+    assert Object.box(34.56).test() == '\n<num:34.56>'
+
+def test_box_keys():
+    assert Object('').keys() == []
+
+def test_box_iter():
+    for i in iter(Object('')): pass

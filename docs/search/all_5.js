@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['int',['Int',['../classST_1_1Int.html',1,'ST']]],
-  ['implementation',['Implementation',['../md_doc_Implementation.html',1,'']]],
-  ['interpreter',['interpreter',['../md_doc_misc_ST_interpreter.html',1,'']]]
+  ['full_20object_20graph_20_60dump_28_29_60',['full object graph `dump()`',['../md_doc_dump.html',1,'']]]
 ];
