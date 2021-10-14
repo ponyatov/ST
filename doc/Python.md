@@ -10,3 +10,4 @@
     - [[operators]]
     - full text tree object graph [[dump]]
 	- [[stack]] operations
+- [[GUI]]

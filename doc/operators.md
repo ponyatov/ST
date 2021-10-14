@@ -12,6 +12,10 @@ class Object:
     ## `iter(A)` iterate over nest[]ed
     def __iter__(self): return iter(self.nest)
 ```
+```py
+    ## `len(A)`
+    def __len__(self): return len(self.nest)
+```
 
 `.keys()` and `.iter()` methods are required for `dump()` because they are used as *group addressing operators*: iterate over slot names, and over nested elements respectively.
 

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['nil',['Nil',['../classST_1_1Nil.html',1,'ST']]],
-  ['num',['Num',['../classST_1_1Num.html',1,'ST']]]
+  ['map',['Map',['../classST_1_1Map.html',1,'ST']]],
+  ['mode',['Mode',['../classST_1_1Mode.html',1,'ST']]]
 ];

@@ -65,6 +65,9 @@ class Object:
     ## `iter(A)` iterate over nest[]ed
     def __iter__(self): return iter(self.nest)
 
+    ## `len(A)`
+    def __len__(self): return len(self.nest)
+
     ## type/class tag
     def tag(self): return self.__class__.__name__.lower()
 
@@ -166,6 +169,15 @@ class Mode(VGA): pass
 class Color(VGA): pass
 
 vga = VGA('text') << Mode('80x25') >> Color('blue')
+
+
+class GUI(Object): pass
+
+gui = GUI('wx')
+
+class Screen(GUI):
+    def __init__(self, V=''):
+        self.wx = __import__('wx')
 
 
 ## external API

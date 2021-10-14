@@ -3,117 +3,154 @@ import pytest
 
 def test_any(): assert True
 
-hello = Object('Hello')
 
-def test_hello():
-    assert hello.test() == '\n<object:Hello>'
+class TestPrimitive:
 
-def test_nil():
-    assert Nil().test() == '\n<nil:>'
+    def test_nil(self):
+        assert Nil().test() == '\n<nil:>'
 
-def test_float():
-    assert Num('3.1415').test() == '\n<num:3.1415>'
+    def test_float(self):
+        assert Num('3.1415').test() == '\n<num:3.1415>'
 
-def test_integer():
-    assert Int(12.34).test() == '\n<int:12>'
+    def test_integer(self):
+        assert Int(12.34).test() == '\n<int:12>'
 
-def test_string():
-    assert Str('asdf').test() == '\n<str:asdf>'
+    def test_string(self):
+        assert Str('asdf').test() == '\n<str:asdf>'
 
-def test_map_empty():
-    assert Map().test() == '\n<map:>'
 
-def test_vector_empty():
-    assert Vector().test() == '\n<vector:>'
+class TestContainer:
 
-def test_stack_empty():
-    assert Stack().test() == '\n<stack:>'
+    def test_map_empty(self):
+        assert Map().test() == '\n<map:>'
 
-def test_queue_empty():
-    assert Queue().test() == '\n<queue:>'
+    def test_vector_empty(self):
+        assert Vector().test() == '\n<vector:>'
 
-def test_box_object():
-    assert Object.box(Object('')).test() == '\n<object:>'
+    def test_stack_empty(self):
+        assert Stack().test() == '\n<stack:>'
 
-def test_box_nil():
-    assert Object.box(None).test() == '\n<nil:>'
+    def test_queue_empty(self):
+        assert Queue().test() == '\n<queue:>'
 
-def test_box_str():
-    assert Object.box('abc').test() == '\n<str:abc>'
 
-def test_box_int():
-    assert Object.box(12).test() == '\n<int:12>'
+class TestBoxing():
 
-def test_box_num():
-    assert Object.box(34.56).test() == '\n<num:34.56>'
+    def test_object(self):
+        assert Object.box(Object('')).test() == '\n<object:>'
 
-def test_box_keys():
-    assert Object('').keys() == []
+    def test_nil(self):
+        assert Object.box(None).test() == '\n<nil:>'
 
-def test_box_iter():
-    for i in iter(Object('')): pass
+    def test_str(self):
+        assert Object.box('abc').test() == '\n<str:abc>'
 
-world = Object('World')
+    def test_int(self):
+        assert Object.box(12).test() == '\n<int:12>'
 
-def test_op_append():
-    assert (hello // world).test() == \
-        '\n<object:Hello>' +\
-        '\n\t0: <object:World>'
+    def test_num(self):
+        assert Object.box(34.56).test() == '\n<num:34.56>'
 
-left = Object('left')
-right = Object('right')
 
-def test_op_shifts():
-    hello << left >> right
-    assert hello.test() == \
-        '\n<object:Hello>' +\
-        '\n\tobject = <object:left>' +\
-        '\n\tright = <object:right>' +\
-        '\n\t0: <object:World>'
+## basic operators
+class TestHello:
+    @pytest.fixture
+    def fixture(self):
+        self.hello = Object('Hello')
+        self.world = Object('World')
+        self.left = Object('left')
+        self.right = Object('right')
 
-stack = Stack()
+    @pytest.fixture
+    def fixhello(self, fixture):
+        (self.hello // self.world) \
+            << self.left \
+            >> self.right
 
-def test_stack_push():
-    assert stack.test() == '\n<stack:>'
-    stack.push(1) // 2
-    assert stack.test() == \
-        '\n<stack:>' +\
-        '\n\t0: <int:1>' +\
-        '\n\t1: <int:2>'
+    def test_keys(self, fixhello):
+        assert self.hello.keys() == \
+            ['object', 'right']
 
-def test_stack_pop():
-    assert stack.pop().test() == '\n<int:2>'
-    assert stack.test() == \
-        '\n<stack:>' +\
-        '\n\t0: <int:1>'
+    def test_iter(self, fixhello):
+        t = iter(self.hello)
+        assert next(t).test() == '\n<object:World>'
+        with pytest.raises(StopIteration): next(t)
 
-def test_stack_top():
-    assert stack.top().test() == '\n<int:1>'
-    assert stack.test() == \
-        '\n<stack:>' +\
-        '\n\t0: <int:1>'
+    def test_len(self, fixhello):
+        assert len(self.hello) == 1
 
-def test_stack_dup():
-    assert stack.dup().test() == \
-        '\n<stack:>' +\
-        '\n\t0: <int:1>' +\
-        '\n\t1: <int:1> _/'
+    def test_hello(self, fixture):
+        assert self.hello.test() == \
+            '\n<object:Hello>'
 
-def test_stack_drop():
-    assert stack.drop().test() == \
-        '\n<stack:>' +\
-        '\n\t0: <int:1>'
+    def test_world(self, fixture):
+        assert self.world.test() == \
+            '\n<object:World>'
+        assert (self.hello // self.world).test() == \
+            '\n<object:Hello>' +\
+            '\n\t0: <object:World>'
 
-def test_stack_swap():
-    stack // 2
-    assert stack.swap().test() ==\
-        '\n<stack:>' +\
-        '\n\t0: <int:2>' +\
-        '\n\t1: <int:1>'
+    def test_op_shifts(self, fixhello):
+        assert self.hello.test() == \
+            '\n<object:Hello>' +\
+            '\n\tobject = <object:left>' +\
+            '\n\tright = <object:right>' +\
+            '\n\t0: <object:World>'
 
-def test_stack_over():
-    assert stack.over().test() ==\
-        '\n<stack:>' +\
-        '\n\t0: <int:2>' +\
-        '\n\t1: <int:1>' +\
-        '\n\t2: <int:2> _/'
+
+class TestStack:
+    @pytest.fixture
+    def fixture(self):
+        self.stack = Stack() // 1 // 2
+
+    def test_goodstack(self, fixture):
+        assert self.stack.test() == \
+            '\n<stack:>' +\
+            '\n\t0: <int:1>' +\
+            '\n\t1: <int:2>'
+
+    def test_push(self, fixture):
+        assert self.stack.push(3).test() == \
+            '\n<stack:>' +\
+            '\n\t0: <int:1>' +\
+            '\n\t1: <int:2>' +\
+            '\n\t2: <int:3>'
+
+    def test_pop(self, fixture):
+        assert self.stack.pop().test() == \
+            '\n<int:2>'
+
+    def test_top(self, fixture):
+        assert self.stack.top().test() == \
+            '\n<int:2>'
+
+    def test_dup(self, fixture):
+        assert self.stack.dup().test() == \
+            '\n<stack:>' +\
+            '\n\t0: <int:1>' +\
+            '\n\t1: <int:2>' +\
+            '\n\t2: <int:2> _/'
+
+    def test_drop(self, fixture):
+        assert self.stack.drop().test() == \
+            '\n<stack:>' +\
+            '\n\t0: <int:1>'
+
+    def test_swap(self, fixture):
+        assert self.stack.swap().test() == \
+            '\n<stack:>' +\
+            '\n\t0: <int:2>' +\
+            '\n\t1: <int:1>'
+
+    def test_over(self, fixture):
+        assert self.stack.over().test() == \
+            '\n<stack:>' +\
+            '\n\t0: <int:1>' +\
+            '\n\t1: <int:2>' +\
+            '\n\t2: <int:1> _/'
+
+
+class TestGUI:
+    def test_preinit(self):
+        assert gui.test() == \
+            '\n<gui:wx>'
