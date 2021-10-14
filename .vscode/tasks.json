@@ -43,5 +43,11 @@
             "command":        "make watch",
             "problemMatcher": []
         },
+        {
+            "label":          "Python: update",
+            "type":           "shell",
+            "command":        "make Python_update",
+            "problemMatcher": []
+        },
     ]
 }

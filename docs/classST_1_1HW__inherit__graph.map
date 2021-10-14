@@ -1,4 +1,6 @@
 <map id="ST.HW" name="ST.HW">
-<area shape="rect" id="node3" href="$classST_1_1VGA.html" title="Video Graphics Array. " alt="" coords="11,155,81,181"/>
-<area shape="rect" id="node2" href="$classST_1_1Object.html" title="core object " alt="" coords="5,5,87,32"/>
+<area shape="rect" id="node3" href="$classST_1_1VGA.html" title="Video Graphics Array. " alt="" coords="57,155,127,181"/>
+<area shape="rect" id="node2" href="$classST_1_1Object.html" title="core object " alt="" coords="51,5,133,32"/>
+<area shape="rect" id="node4" href="$classST_1_1Color.html" title="ST.Color" alt="" coords="5,229,80,256"/>
+<area shape="rect" id="node5" href="$classST_1_1Mode.html" title="ST.Mode" alt="" coords="104,229,179,256"/>
 </map>

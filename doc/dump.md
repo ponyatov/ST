@@ -1,5 +1,5 @@
 # full object graph `dump()`
-#ST #PY
+#ST #PY #dump
 
 With these [[operators]] we can rewrite the `Object.dump()` method, to make the full object graph [[dump]]s.
 
@@ -7,12 +7,12 @@ With these [[operators]] we can rewrite the `Object.dump()` method, to make the 
 class Object:
     ## full text tree dump
     def dump(self, cycle=[], depth=0, prefix='', test=False):
-        # head
+        # header
         def pad(depth): return '\n' + '\t' * depth
         ret = pad(depth) + self.head(prefix, test)
         # cycle break
         if not depth: cycle = [] # init
-        if self in cycle: return f'{self.value} _/'
+        if self in cycle: return f'{ret} _/'
         else: cycle.append(self)
         # slot{}s
         for i in self.keys():

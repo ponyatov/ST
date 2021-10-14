@@ -13,6 +13,7 @@ inspired by
 	impressive playlist: intro to the Smalltalk programming which gives its feel like a live working environment (look especially on debugging and the Morphic GUI)
 ''') \
     | Python() \
+    | WX() \
     | ST()
 
 p.sync()

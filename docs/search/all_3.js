@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['color',['Color',['../classST_1_1Color.html',1,'ST']]],
   ['container',['Container',['../classST_1_1Container.html',1,'ST']]],
   ['classical_20smalltalk_20drawbacks',['Classical Smalltalk drawbacks',['../md_doc_drawbacks.html',1,'']]],
   ['compiler',['compiler',['../md_doc_misc_ST_compiler.html',1,'']]],

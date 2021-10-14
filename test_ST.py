@@ -70,3 +70,50 @@ def test_op_shifts():
         '\n\tobject = <object:left>' +\
         '\n\tright = <object:right>' +\
         '\n\t0: <object:World>'
+
+stack = Stack()
+
+def test_stack_push():
+    assert stack.test() == '\n<stack:>'
+    stack.push(1) // 2
+    assert stack.test() == \
+        '\n<stack:>' +\
+        '\n\t0: <int:1>' +\
+        '\n\t1: <int:2>'
+
+def test_stack_pop():
+    assert stack.pop().test() == '\n<int:2>'
+    assert stack.test() == \
+        '\n<stack:>' +\
+        '\n\t0: <int:1>'
+
+def test_stack_top():
+    assert stack.top().test() == '\n<int:1>'
+    assert stack.test() == \
+        '\n<stack:>' +\
+        '\n\t0: <int:1>'
+
+def test_stack_dup():
+    assert stack.dup().test() == \
+        '\n<stack:>' +\
+        '\n\t0: <int:1>' +\
+        '\n\t1: <int:1> _/'
+
+def test_stack_drop():
+    assert stack.drop().test() == \
+        '\n<stack:>' +\
+        '\n\t0: <int:1>'
+
+def test_stack_swap():
+    stack // 2
+    assert stack.swap().test() ==\
+        '\n<stack:>' +\
+        '\n\t0: <int:2>' +\
+        '\n\t1: <int:1>'
+
+def test_stack_over():
+    assert stack.over().test() ==\
+        '\n<stack:>' +\
+        '\n\t0: <int:2>' +\
+        '\n\t1: <int:1>' +\
+        '\n\t2: <int:2> _/'

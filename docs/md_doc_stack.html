@@ -64,7 +64,16 @@ $(function() {
 <div class="title">stack operations </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>#ST #Py </p>
+<div class="textblock"><p>#ST #Py</p>
+<h2>add / get / remove</h2>
+<p>``<code>py &lt;h2&gt;</code>( &ndash; o )` def push(self, that): return self // Object.box(that) <code> </code>py </p><h2><code>( o1 o2 -- o1 )</code></h2>
+<p>def pop(self, idx=-1): return self.nest.pop(idx) <code> </code>py </p><h2><code>( o -- o )</code></h2>
+<p>def top(self, idx=-1): return self.nest[idx] ```</p>
+<h2>reorder</h2>
+<p>``<code>py &lt;h2&gt;</code>( o - o o )` def dup(self): return self // self.top() <code> </code>py </p><h2><code>( o1 o2 -- o1 )</code></h2>
+<p>def drop(self): self.pop(); return self <code> </code>py </p><h2><code>( o1 o2 -- o2 o1 )</code></h2>
+<p>def swap(self): return self // self.pop(-2) <code> </code>py </p><h2><code>( o1 o2 -- o1 o2 o1 )</code></h2>
+<p>def over(self): return self // self.top(-2) ``` </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

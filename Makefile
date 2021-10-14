@@ -99,9 +99,13 @@ doc/PERQ.pdf:
 install: $(OS)_install doc $(RUSTUP)
 	$(MAKE) update
 update: $(OS)_update
+	$(MAKE) Python_update
+	$(RUSTUP) update && $(CARGO) update
+
+.PHONY: Python_update
+Python_update:
 	$(PIP) install --user -U pip pytest autopep8
 	$(PIP) install --user -U -r requirements.txt
-	$(RUSTUP) update && $(CARGO) update
 
 .PHONY: Linux_install Linux_update
 Linux_install Linux_update:
@@ -120,7 +124,7 @@ $(RUSTUP):
 # / install
 
 # \ merge
-MERGE  = Makefile README.md .gitignore apt.dev apt.txt doxy.gen $(S)
+MERGE  = Makefile README.md .gitignore apt.dev apt.txt apt.msys doxy.gen $(S)
 MERGE += .vscode bin doc lib src tmp
 MERGE += requirements.txt
 

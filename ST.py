@@ -36,12 +36,12 @@ class Object:
 
     ## full text tree dump
     def dump(self, cycle=[], depth=0, prefix='', test=False):
-        # head
+        # header
         def pad(depth): return '\n' + '\t' * depth
         ret = pad(depth) + self.head(prefix, test)
         # cycle break
         if not depth: cycle = [] # init
-        if self in cycle: return f'{self.value} _/'
+        if self in cycle: return f'{ret} _/'
         else: cycle.append(self)
         # slot{}s
         for i in self.keys():
@@ -98,6 +98,29 @@ class Object:
         that = Object.box(that)
         return self.__setitem__(that.val(), that)
 
+    ## @name stack
+
+    ## `( -- o )`
+    def push(self, that): return self // Object.box(that)
+
+    ## `( o1 o2 -- o1 )`
+    def pop(self, idx=-1): return self.nest.pop(idx)
+
+    ## `( o -- o )`
+    def top(self, idx=-1): return self.nest[idx]
+
+    ## `( o - o o )`
+    def dup(self): return self // self.top()
+
+    ## `( o1 o2 -- o1 )`
+    def drop(self): self.pop(); return self
+
+    ## `( o1 o2 -- o2 o1 )`
+    def swap(self): return self // self.pop(-2)
+
+    ## `( o1 o2 -- o1 o2 o1 )`
+    def over(self): return self // self.top(-2)
+
 
 ## scalar data close to machine primitives
 class Primitive(Object): pass
@@ -139,11 +162,25 @@ class HW(Object): pass
 
 ## Video Graphics Array
 class VGA(HW): pass
+class Mode(VGA): pass
+class Color(VGA): pass
 
-vga = VGA('test')
+vga = VGA('text') << Mode('80x25') >> Color('blue')
+
+
+## external API
+class API(Object): pass
+
+## vk.com API (well known Russian social network)
+## @details https://pythonrepo.com/repo/python273-vk_api-python-third-party-apis-wrappers
+class VK(API):
+    def __init__(self, V='api'):
+        super().__init__(V)
+        self.api = __import__('vk_api')
 
 ## system init
 if __name__ == '__main__':
     pass
+    # vk = VK(); print(vk)
 
 ## @}

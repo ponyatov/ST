@@ -1,4 +1,4 @@
-# #Smalltalk  in #Python
+# #Smalltalk in #Python
 #ST #Python
 
 - Core [[ST/Object|Object]]

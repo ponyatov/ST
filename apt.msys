@@ -1,0 +1,3 @@
+git make curl
+python python-pip
+mingw-w64-x86_64-wxPython

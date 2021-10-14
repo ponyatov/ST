@@ -1,5 +1,5 @@
 # operators
-#ST #Py
+#ST #Py #operator
 
 Operators let to modify and build objects graphs using Python literals in a code and give a better readable Python code that manipulates object graphs. With Python magic, we can redefine some operators for the [[Object]] and all inherited classes:
 
@@ -50,6 +50,11 @@ The most used operation is adding a new nested object or subgraph.
         self.slot[key] = that; return self
 ```
 
+The fetch/store operations are available thru list-like indexing:
+- slots addressed by strings
+- nested elements available via an integer index
+- Python has no native sparse lists, so assignments can be done only for slots
+
 ```py
     ## `A << B -> A[B.tag] = B` assign slot by B class tag
     def __lshift__(self, that):
@@ -64,12 +69,23 @@ The most used operation is adding a new nested object or subgraph.
 ```
 
 
-`<<` and `>>` **shift operations** are frequently used when you build some descriptional or HTML-like data structure with attribute names by objects assigned to its slots:
+`<<` and `>>` **shift operations** are frequently used when you build some descriptional or HTML-like data structure with attribute names generated from objects assigned to its slots:
 
 ```py
+## Video Graphics Array
+class VGA(HW): pass
+class Mode(VGA): pass
+class Color(VGA): pass
+
+vga = VGA('text') << Mode('80x25') >> Color('blue')
+```
+```
+<vga:text> @7f672e2df780
+    blue = <color:blue> @7f672e2dfe10
+    mode = <mode:80x25> @7f672e2df978
 ```
 
 <hr>
-With these operators we can rewrite the `Object.dump()` method, to make the full object graph [[ST/dump|dump]]s.
+With these operators we can rewrite the `Object.dump()` method, to make the full object graph [[ST/dump|dump]].
 
 Next, we can also define [[stack]] operations.

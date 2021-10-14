@@ -1,4 +1,6 @@
 <map id="ST.VGA" name="ST.VGA">
-<area shape="rect" id="node2" href="$classST_1_1HW.html" title="hardware components " alt="" coords="13,80,79,107"/>
-<area shape="rect" id="node3" href="$classST_1_1Object.html" title="core object " alt="" coords="5,5,87,32"/>
+<area shape="rect" id="node4" href="$classST_1_1Color.html" title="ST.Color" alt="" coords="5,229,80,256"/>
+<area shape="rect" id="node5" href="$classST_1_1Mode.html" title="ST.Mode" alt="" coords="104,229,179,256"/>
+<area shape="rect" id="node2" href="$classST_1_1HW.html" title="hardware components " alt="" coords="59,80,125,107"/>
+<area shape="rect" id="node3" href="$classST_1_1Object.html" title="core object " alt="" coords="51,5,133,32"/>
 </map>
